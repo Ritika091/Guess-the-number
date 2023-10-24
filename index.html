@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess the number</title>
+</head>
+<body>
+    <h1 class="heading">Guess the Number</h1>
+    <p class="para">Enter any number from 1 to 100</p>
+    <h2 id="attempts"></h2>
+    <h3>Guessed Numbers: <span id="number_guessed"></span></h3>
+    <p id="equality"></p>
+    <h2 id="winner"></h2>
+    <div class="user_input">
+        <input type="number" id="no_input" min="1" max="100" >
+        <button type="submit" id="submit_input">Guess</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+   <script src="game.js"></script>
+</body>
+</html>
