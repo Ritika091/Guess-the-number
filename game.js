@@ -1,6 +1,6 @@
 const jsConfetti = new JSConfetti()
 let y=Math.floor(Math.random()*100)+1;
-console.log(y)
+// console.log(y)
 let attempt=document.getElementById('attempts')
 let guess_no= document.getElementById('number_guessed')
 let equal=document.getElementById('equality')
