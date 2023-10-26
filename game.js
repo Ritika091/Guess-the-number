@@ -1,7 +1,13 @@
 const jsConfetti = new JSConfetti()
 let y=Math.floor(Math.random()*100)+1;
-// console.log(y)
-document.getElementById('attempts').innerText="Number of attempts: 0"
+console.log(y)
+let attempt=document.getElementById('attempts')
+let guess_no= document.getElementById('number_guessed')
+let equal=document.getElementById('equality')
+let win=document.getElementById('winner')
+let submit=document.getElementById('submit_input')
+
+attempt.innerText="Number of attempts: 0"
 let c=0
 let num=[]
 function guess(){
@@ -18,26 +24,27 @@ function guess(){
     }
     else{
         num.push(x);
-        document.getElementById('number_guessed').textContent=num
+        guess_no.textContent=num
     }
     
      if(x==y){
         c++
-        document.getElementById('winner').innerText="Congratulations! You won the game"
+        win.innerText="Congratulations! You won the game"
         jsConfetti.addConfetti()
-        document.getElementById('attempts').innerText=`Number of attempts: ${c}`;
-        document.getElementById('equality').innerText="GREAT JOB !! guessed number is same as the number"
+        attempt.innerText=`Number of attempts: ${c}`;
+        equal.innerText="GREAT JOB !! guessed number is same as the number"
+        submit.disabled=true
         c=0
     }
     else if(x>y){
         c++;
-        document.getElementById('attempts').innerText=`Number of attempts: ${c}`;
-        document.getElementById('equality').innerText="OOPS!! SORRY, guessed number is higher than the number"
+       attempt.innerText=`Number of attempts: ${c}`;
+       equal.innerText="OOPS!! SORRY, guessed number is higher than the number"
     }
     else if(x<y){
         c++;
-        document.getElementById('attempts').innerText=`Number of attempts: ${c}`;
-        document.getElementById('equality').innerText="OOPS!! SORRY, guessed number is lower than the number"
+        attempt.innerText=`Number of attempts: ${c}`;
+        equal.innerText="OOPS!! SORRY, guessed number is lower than the number"
     }
     }
     if( c==6){
@@ -47,5 +54,5 @@ function guess(){
    
 }
 
-document.getElementById('submit_input').onclick=guess;
+submit.onclick=guess;
 
